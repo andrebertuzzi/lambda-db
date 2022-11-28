@@ -2,13 +2,7 @@ const { Pool, Client } = require('pg')
 
 const query = async (cmd, args) => {
 	return new Promise((resolve, reject) => {
-		const connection = new Pool({
-			host: process.env.POSTGRES_HOST,
-      port: process.env.POSTGRES_PORT,
-      database: process.env.POSTGRES_DBNAME,
-			user: process.env.POSTGRES_USER,
-			password: process.env.POSTGRES_PASSWORD,
-		})
+		const connection = new Pool()
 
 		console.log('connection created - going to connect ')
 
