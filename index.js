@@ -1,6 +1,5 @@
 const { Pool } = require('pg')
 const AWS = require('aws-sdk')
-AWS.config.update({ region: 'sa-east-1' })
 
 const functionName = process.env.AWS_LAMBDA_FUNCTION_NAME
 const encrypted = process.env.CONNECTION_STRING
@@ -19,7 +18,7 @@ const query = async (cmd, args, connectionString) => {
     return results
   } catch (err) {
     console.log('error ', JSON.stringify(err))
-    throw err
+    // throw err
   } finally {
     await pool.end()
   }
