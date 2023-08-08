@@ -38,7 +38,7 @@ exports.handler = async (event) => {
       decrypted = data.Plaintext.toString('ascii')
     } catch (err) {
       console.log('Decrypt error:', err)
-      throw err
+      // throw err
     }
   }
   if (Array.isArray(event.Records)) {
