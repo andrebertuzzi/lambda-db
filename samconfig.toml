@@ -1,0 +1,8 @@
+version = 0.1
+[prod.deploy.parameters]
+stack_name = "lambda-db"
+resolve_s3 = true
+s3_prefix = "lambda-db"
+region = "sa-east-1"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []

@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'db
+
+  '
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 128
+Resources:
+  DBFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: DBFunction
+      Handler: index.handler
+      Runtime: nodejs16.x
+      Architectures:
+      - x86_64
+      VpcConfig:
+        SecurityGroupIds:
+        - sg-0d531305e195a2d51
+        SubnetIds:
+        - subnet-01609c493a1543101
+        - subnet-0846bcebb208031dc
+        - subnet-036e316a7e2795fe6
+      Environment:
+        Variables:
+          CONNECTION_STRING: your_connection_string_here
+      Policies:
+      - AWSLambdaVPCAccessExecutionRole
+    Metadata:
+      SamResourceId: DBFunction
