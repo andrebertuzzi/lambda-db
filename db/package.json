@@ -1,0 +1,18 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "DB interface",
+  "main": "index.js",
+  "repository": "https://github.com/awslabs/aws-sam-cli/tree/develop/samcli/local/init/templates/cookiecutter-aws-sam-hello-nodejs",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "zip -9 -r -u  package.zip ./index.js ./node_modules/* && aws lambda update-function-code --function-name db-test --zip-file fileb://package.zip --publish"
+  },
+  "dependencies": {
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1437.0"
+  }
+}
