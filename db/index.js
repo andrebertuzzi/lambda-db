@@ -1,5 +1,4 @@
 const { Pool } = require('pg')
-const AWS = require('aws-sdk')
 
 const connectionString = process.env.CONNECTION_STRING
 let pool = null

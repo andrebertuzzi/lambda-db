@@ -13,6 +13,7 @@
     "pg": "^8.5.1"
   },
   "devDependencies": {
-    "aws-sdk": "^2.1437.0"
+    "aws-sdk": "^2.1437.0",
+    "eslint": "^8.48.0"
   }
 }
